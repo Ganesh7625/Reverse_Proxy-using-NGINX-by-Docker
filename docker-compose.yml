@@ -1,0 +1,17 @@
+version: '3'
+networks:
+        mynetworks:
+services:
+        server:
+                container_name: NG-OS1
+                image: nginx:latest
+                ports:
+                        - 8080:80
+                volumes:
+                        - ./data:/usr/share/nginx/html/
+                        
+        mybackend:
+                container_name: NG-OS2
+                image: nginx:latest
+                ports:
+                        - 8081:80
